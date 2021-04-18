@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext';
 
 function StepCounter() {
-    const { page } = useContext(GlobalContext);
+    const { pageNumber } = useContext(GlobalContext);
     return (
         <div>
-            step: {page} / n
+            step: {pageNumber} / n
         </div>
     )
 }

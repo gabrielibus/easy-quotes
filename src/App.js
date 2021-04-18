@@ -4,6 +4,7 @@ import { GlobalProvider } from './context/GlobalContext';
 import Wellcome from './components/Wellcome';
 import InputData from './components/InputData';
 import StepCounter from './components/StepCounter';
+import UploadPicture from './components/UploadPicture';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Wellcome />
       <InputData />
+      <UploadPicture />
     </div>
     <StepCounter />
     </GlobalProvider>
