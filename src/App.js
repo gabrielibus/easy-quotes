@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useContext } from 'react';
+import React from 'react';
 import { GlobalProvider } from './context/GlobalContext';
 import Wellcome from './components/Wellcome';
 import InputData from './components/InputData';
