@@ -8,39 +8,35 @@ function UploadPicture(props) {
         data.append('file', userPicture)
         // put data on backend
     }
+    console.log(userPicture)
+    
     const onChangeHandler = (event) => {
         const file = event.target.files[0];
-        const img = URL.createObjectURL(file)
-
-        
-        setuserPicture(img)
+        setuserPicture(
+            Object.assign(file, {
+                preview: URL.createObjectURL(file)})
+        )
     };
-    
-    const previewImg = () => {
-        if (userPicture)  {
+    const validPicture =()=>{
+        if (userPicture && userPicture.preview)  {
+            return 1;
+    } 
+}
 
-            const reader = new FileReader();
-        reader.readAsDataURL(userPicture);
-        return (
-            <img src={reader.result} alt='algo' />
+    const PreviewImg = () => {
+        if (validPicture())  {
+            return (
+                <img width='200' src={userPicture.preview} alt='algo' />
             )
-        }
+        } 
+            return <></>
         }
 
     if (page === 'UploadPicture') {
         return (
             <div>
                 Sube el logo de tu empresa
-                { 
-                previewImg()
-                // userPicture
-                // ? (<div>
-                //         <div>entró</div>
-                //         <img src={userPicture} alt='algo' />
-                //     </div>
-                //   )
-                // : <>no entró</>
-                }
+                <PreviewImg />
                 <br></br>
                 <input 
                     type='file'
@@ -50,7 +46,7 @@ function UploadPicture(props) {
                 />
                 <button onClick={onClickHandler} >Subir</button>
                 <button onClick={()=>setpage('InputData')} >Atrás</button>
-                <button disabled >Siguiente</button>
+                <button disabled={validPicture() ? 0 : 1} >Siguiente</button>
             </div>
     )
 }

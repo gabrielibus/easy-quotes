@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const [page, setpage] = useState('UploadPicture');
+    const [page, setpage] = useState('Wellcome');
     const [userData, setuserData] = useState({});
     const [userPicture, setuserPicture] = useState();
     
@@ -26,9 +26,9 @@ export const GlobalProvider = ({ children }) => {
         setpage,
         userData,
         setuserData,
+        userPicture,
         setuserPicture
     }
-    console.log(userPicture)
     return (
         <GlobalContext.Provider value={ value }>
             {children}
