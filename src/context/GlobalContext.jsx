@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const [page, setpage] = useState('Wellcome');
+    const [page, setpage] = useState('UploadPicture');
     const [userData, setuserData] = useState({});
     const [userPicture, setuserPicture] = useState();
     
@@ -15,15 +15,14 @@ export const GlobalProvider = ({ children }) => {
                 return 2
                 case 'UploadPicture':
                 return 3
+            default:
+                return 
         }
     };
 
-    console.log()
     let value = {
         page: page,
         pageNumber: pageNumber(),
-        test: 'test',
-        num: ' 7',
         setpage,
         userData,
         setuserData,
