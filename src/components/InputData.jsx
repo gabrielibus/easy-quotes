@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext';
+import "./Welcome.scss"
 
 function InputData() {
     const { page, setpage, userData, setuserData } = useContext(GlobalContext);
@@ -11,9 +12,12 @@ function InputData() {
 
     if (page === 'InputData') {
         return (
-            <div>
-            InputData
+            <div className="wrapper flex marginBottom">
+            <h2>
+                Ingresa tus datos para la cotización
+            </h2>
             <input
+                className="input marginBottom"
                 defaultValue={userData.name}
                 name="name"
                 type="text"
@@ -22,6 +26,7 @@ function InputData() {
             >
             </input>
             <input
+                className="input marginBottom"
                 defaultValue={userData.nit}
                 name="nit"
                 type="number"
@@ -30,6 +35,7 @@ function InputData() {
             >
             </input>
             <input
+                className="input marginBottom"
                 defaultValue={userData.address}
                 name="address"
                 type="text"
@@ -38,6 +44,7 @@ function InputData() {
             >
             </input>
             <input
+                className="input marginBottom"
                 defaultValue={userData.phone}
                 name="phone"
                 type="phone"
@@ -46,6 +53,7 @@ function InputData() {
             >
             </input>
             <input
+                className="input marginBottom"
                 defaultValue={userData.email}
                 name="email"
                 type="email"
@@ -53,8 +61,8 @@ function InputData() {
                 onChange={handleInput}    
             >
             </input>
-            <button onClick={()=>setpage('Wellcome')}>Atrás</button>
-            <button onClick={()=>setpage('UploadPicture')}>Siguiente</button>
+            <button className="btn gold fixed bottomLeft" onClick={()=>setpage('Wellcome')}>Atrás</button>
+            <button className="btn gold fixed bottomRight" onClick={()=>setpage('UploadPicture')}>Siguiente</button>
             
         </div>
             )

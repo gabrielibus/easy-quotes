@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+$ubuntu:  'Ubuntu', sans-serif;
+$dark: #0B728F;
+$ligth: #E2F0F9;
+$gold: goldenrod;
+.gold {background-color: $gold;}
+
+* {
+    font-family: $ubuntu;
+}
+
+.wrapper {
+    margin: auto;
+    width: 400px;
+    height: 80vh;
+    border-radius: 5px;
+    background-color: $dark;
+    color: $ligth;
+}
+.inputPic {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+// Generales
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    min-width: 80px;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.185);
+}
+
+.input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.msjBox {
+    width: 85%;
+}
+
+
+.marginTop {
+    margin: 1rem auto auto auto;
+}
+
+.marginBottom {
+    margin: 0 auto 1rem auto;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 5%;
+}
+
+.bottomLeft {
+    left: 15%;
+}
+
+.bottomRight {
+    right: 15%;
+}

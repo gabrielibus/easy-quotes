@@ -1,56 +1,89 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext';
+import "./Welcome.scss"
 
 function UploadPicture(props) {
     const { page, setpage, userPicture, setuserPicture } = useContext(GlobalContext);
     const onClickHandler = () => {
-        const data = new FormData() 
+        const data = new FormData()
         data.append('file', userPicture)
         // put data on backend
     }
     console.log(userPicture)
-    
+
     const onChangeHandler = (event) => {
         const file = event.target.files[0];
         setuserPicture(
             Object.assign(file, {
-                preview: URL.createObjectURL(file)})
+                preview: URL.createObjectURL(file)
+            })
         )
     };
-    const validPicture =()=>{
-        if (userPicture && userPicture.preview)  {
+    const validPicture = () => {
+        if (userPicture && userPicture.preview) {
             return 1;
-    } 
-}
+        }
+    }
 
     const PreviewImg = () => {
-        if (validPicture())  {
+        if (validPicture()) {
             return (
                 <img width='200' src={userPicture.preview} alt='algo' />
             )
-        } 
-            return <></>
         }
+        return <></>
+    }
+
+    const UploadImg = () => {
+        if (!userPicture) {
+            return (
+                <>
+                    <label
+                        for="inputPic"
+                        className="inputPic"
+                    >Sube tu logo</label>
+                    <input
+                        id="inputPic"
+                        className="hidden"
+                        type='file'
+                        accept='image/*, .pdf'
+                        onChange={onChangeHandler}
+                    />
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <label
+                        for="inputPic"
+                        className="inputPic marginBottom"
+                    >Cambiar</label>
+                    <input
+                        id="inputPic"
+                        className="hidden"
+                        type='file'
+                        accept='image/*, .pdf'
+                        onChange={onChangeHandler}
+                    />
+                </>
+            )
+        }
+    }
 
     if (page === 'UploadPicture') {
         return (
-            <div>
-                Sube el logo de tu empresa
-                <PreviewImg />
-                <br></br>
-                <input 
-                    type='file'
-                    accept='image/*, .pdf'
-                    // onInput={(event)=>console.log(event.target.value)}
-                    onChange={onChangeHandler}
-                />
-                <button onClick={onClickHandler} >Subir</button>
-                <button onClick={()=>setpage('InputData')} >Atrás</button>
-                <button disabled={validPicture() ? 0 : 1} >Siguiente</button>
+            <div className="wrapper flex marginBottom">
+                <h2>Sube el logo de tu empresa</h2>
+                <div className="marginBottom">
+                    <PreviewImg />
+                </div>
+                <UploadImg />
+                <button className="btn gold fixed bottomLeft" onClick={() => setpage('InputData')} >Atrás</button>
+                <button className="btn gold fixed bottomRight" disabled={validPicture() ? 0 : 1} >Siguiente</button>
             </div>
-    )
-}
-return <></>
+        )
+    }
+    return <></>
 }
 
 export default UploadPicture;
