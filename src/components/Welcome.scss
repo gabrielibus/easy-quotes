@@ -12,7 +12,8 @@ $gold: goldenrod;
 
 .wrapper {
     margin: auto;
-    width: 400px;
+    width: 100%;
+    // width: 400px;
     height: 80vh;
     border-radius: 5px;
     background-color: $dark;
@@ -36,6 +37,9 @@ $gold: goldenrod;
     justify-content: center;
     align-items: center;
 }
+.row {
+    flex-direction: row;
+}
 
 .btn {
     min-width: 80px;
@@ -50,6 +54,7 @@ $gold: goldenrod;
     padding: 0.5rem;
     border: none;
     border-radius: 3px;
+    width: 80%;
 }
 
 .msjBox {

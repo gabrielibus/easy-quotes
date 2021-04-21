@@ -5,6 +5,7 @@ import Wellcome from './components/Welcome';
 import InputData from './components/InputData';
 import StepCounter from './components/StepCounter';
 import UploadPicture from './components/UploadPicture';
+import Quote from './components/Quote';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Wellcome />
         <InputData />
         <UploadPicture />
+        <Quote />
         <StepCounter />
       </GlobalProvider>
     </div>

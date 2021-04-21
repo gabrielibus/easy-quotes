@@ -9,7 +9,6 @@ function UploadPicture(props) {
         data.append('file', userPicture)
         // put data on backend
     }
-    console.log(userPicture)
 
     const onChangeHandler = (event) => {
         const file = event.target.files[0];
@@ -79,7 +78,7 @@ function UploadPicture(props) {
                 </div>
                 <UploadImg />
                 <button className="btn gold fixed bottomLeft" onClick={() => setpage('InputData')} >Atrás</button>
-                <button className="btn gold fixed bottomRight" disabled={validPicture() ? 0 : 1} >Siguiente</button>
+                <button className="btn gold fixed bottomRight" disabled={validPicture() ? 0 : 1}onClick={() => setpage('Quote')} >Siguiente</button>
             </div>
         )
     }

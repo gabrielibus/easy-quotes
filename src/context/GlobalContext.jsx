@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const [page, setpage] = useState('Wellcome');
+    const [page, setpage] = useState('Quote');
     const [userData, setuserData] = useState({});
     const [userPicture, setuserPicture] = useState();
     
