@@ -1,14 +1,13 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext';
-import "./Welcome.scss"
 
-function UploadPicture(props) {
+function UploadPicture() {
     const { page, setpage, userPicture, setuserPicture } = useContext(GlobalContext);
-    const onClickHandler = () => {
-        const data = new FormData()
-        data.append('file', userPicture)
-        // put data on backend
-    }
+    // const onClickHandler = () => {
+    //     const data = new FormData()
+    //     data.append('file', userPicture)
+    //     // put data on backend
+    // }
 
     const onChangeHandler = (event) => {
         const file = event.target.files[0];
@@ -71,8 +70,8 @@ function UploadPicture(props) {
 
     if (page === 'UploadPicture') {
         return (
-            <div className="wrapper flex marginBottom">
-                <h2>Sube el logo de tu empresa</h2>
+            <div className="wrapper flex marginBottom paddingH">
+                <h2 className='textCenter marginBottom'>Sube el logo de tu empresa</h2>
                 <div className="marginBottom">
                     <PreviewImg />
                 </div>

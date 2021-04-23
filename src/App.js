@@ -1,16 +1,15 @@
-import './App.css';
 import React from 'react';
 import { GlobalProvider } from './context/GlobalContext';
-import Wellcome from './components/Welcome';
-import InputData from './components/InputData';
 import StepCounter from './components/StepCounter';
 import UploadPicture from './components/UploadPicture';
 import Quote from './components/Quote';
-
+import InputData from './components/InputData/InputData';
+import Wellcome from './components/Welcome';
+import "./styles/customStyles/customStyles.scss";
+import "./styles/components/Quote.scss";
+import "./styles/components/UploadPicture.scss";
 
 function App() {
-
-  // const {test} = useContext(GlobalContext);
 
   return (
     <div className="App">

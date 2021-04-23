@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from '../context/GlobalContext';
-import "./Welcome.scss"
+import { GlobalContext } from '../../context/GlobalContext';
 
 function InputData() {
     const { page, setpage, userData, setuserData } = useContext(GlobalContext);
@@ -12,8 +11,8 @@ function InputData() {
 
     if (page === 'InputData') {
         return (
-            <div className="wrapper flex marginBottom">
-                <h2>
+            <div className="wrapper flex marginBottom paddingH">
+                <h2 className='textCenter marginBottom'>
                     Ingresa tus datos para la cotización
             </h2>
                 <input

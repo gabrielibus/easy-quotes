@@ -3,13 +3,13 @@ import React, { createContext, useState } from 'react';
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const [page, setpage] = useState('Quote');
+    const [page, setpage] = useState('Welcome');
     const [userData, setuserData] = useState({});
     const [userPicture, setuserPicture] = useState();
     
     const pageNumber = ()=>{
         switch (page) {
-            case 'Wellcome':
+            case 'Welcome':
                 return 1
             case 'InputData':
                 return 2

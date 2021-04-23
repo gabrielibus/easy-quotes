@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalContext';
 function StepCounter() {
     const { pageNumber } = useContext(GlobalContext);
     return (
-        <div>
+        <div className="paddingH">
             step: {pageNumber} / n
         </div>
     )
