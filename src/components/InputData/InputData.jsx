@@ -16,7 +16,7 @@ function InputData() {
                     Ingresa tus datos para la cotización
             </h2>
                 <input
-                    className="input marginBottom"
+                    className="input marginBottom marginTop"
                     defaultValue={userData.name}
                     name="name"
                     type="text"
@@ -60,8 +60,10 @@ function InputData() {
                     onChange={handleInput}
                 >
                 </input>
-                <button className="btn gold fixed bottomLeft" onClick={() => setpage('Wellcome')}>Atrás</button>
-                <button className="btn gold fixed bottomRight" onClick={() => setpage('UploadPicture')}>Siguiente</button>
+                <div className="flex row justifyBetween fullWidth marginTop">
+                    <button className="btn gold fixed bottomLeft" onClick={() => setpage('Welcome')}>Atrás</button>
+                    <button className="btn gold fixed bottomRight" onClick={() => setpage('UploadPicture')}>Siguiente</button>
+                </div>
             </div>
         )
     }

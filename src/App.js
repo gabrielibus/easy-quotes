@@ -1,13 +1,14 @@
 import React from 'react';
 import { GlobalProvider } from './context/GlobalContext';
-import StepCounter from './components/StepCounter';
-import UploadPicture from './components/UploadPicture';
-import Quote from './components/Quote';
+import StepCounter from './components/StepCounter/StepCounter';
+import UploadPicture from './components/UploadPicture/UploadPicture';
+import Quote from './components/borrame_Quote.jsx/Quote';
 import InputData from './components/InputData/InputData';
-import Wellcome from './components/Welcome';
+import Wellcome from './components/Welcome/Welcome';
 import "./styles/customStyles/customStyles.scss";
 import "./styles/components/Quote.scss";
 import "./styles/components/UploadPicture.scss";
+import Summary from './components/Summary/Summary';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
         <Wellcome />
         <InputData />
         <UploadPicture />
-        <Quote />
+        <Summary />
         <StepCounter />
       </GlobalProvider>
     </div>

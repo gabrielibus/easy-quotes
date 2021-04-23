@@ -6,17 +6,14 @@ export const GlobalProvider = ({ children }) => {
     const [page, setpage] = useState('Welcome');
     const [userData, setuserData] = useState({});
     const [userPicture, setuserPicture] = useState();
-    
-    const pageNumber = ()=>{
+
+    const pageNumber = () => {
         switch (page) {
-            case 'Welcome':
-                return 1
-            case 'InputData':
-                return 2
-                case 'UploadPicture':
-                return 3
-            default:
-                return 
+            case 'Welcome': return 0
+            case 'InputData': return 1
+            case 'UploadPicture': return 2
+            case 'Summary': return 3
+            default: return 0
         }
     };
 
@@ -27,11 +24,11 @@ export const GlobalProvider = ({ children }) => {
         userData,
         setuserData,
         userPicture,
-        setuserPicture
+        setuserPicture,
     }
     return (
-        <GlobalContext.Provider value={ value }>
+        <GlobalContext.Provider value={value}>
             {children}
         </ GlobalContext.Provider>
-        )
+    )
 };

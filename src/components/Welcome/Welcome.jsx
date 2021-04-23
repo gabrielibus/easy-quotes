@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from '../context/GlobalContext'
+import { GlobalContext } from '../../context/GlobalContext'
 
 function Wellcome() {
     const { page, setpage } = useContext(GlobalContext)
@@ -12,7 +12,9 @@ function Wellcome() {
                 <div className="msjBox textCenter">
                     Te presentamos el servicio de creación de cotizaciones fácil, rápido y GRATIS!
                 </div>
-                <button className="btn gold marginTop fixed bottomCenter" onClick={() => setpage('InputData')}>Siguiente</button>
+                <div className="flex row justifyBetween fullWidth marginTop">
+                    <button className="btn gold marginTop fixed" onClick={() => setpage('InputData')}>Siguiente</button>
+                </div>
             </div>
         )
     }
